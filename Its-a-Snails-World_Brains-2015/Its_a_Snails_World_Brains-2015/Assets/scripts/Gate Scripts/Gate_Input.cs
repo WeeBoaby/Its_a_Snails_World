@@ -13,12 +13,24 @@ public class Gate_Input : MonoBehaviour
     public float timerTemp = 0.0f;
     public bool gateHit = false;
 
+	public ParticleSystem myParticles;
+
     public int x, y;
 
     // Use this for initialization
     void Start()
     {
         myEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+
+		foreach(Transform child in transform)
+		{
+			if (child.tag == "Particle")
+			{
+				myParticles = child.GetComponent<ParticleSystem>();
+				myParticles.gameObject.SetActive(true);
+				myParticles.emissionRate = 0;
+			}
+		}
     }
 
     // Update is called once per frame
@@ -66,13 +78,14 @@ public class Gate_Input : MonoBehaviour
     {
         gateHit = true;
         timerTemp = stayOpenTime;
+		myParticles.emissionRate = 15;
         Debug.Log("gate opened, timer started");
     }
 
     void CloseGate()
     {
         gateHit = false;
-
+		myParticles.emissionRate = 0;
         Debug.Log("closing the gate, timer hit 0");
     }
 }
