@@ -82,22 +82,6 @@ public class ConnectionMatrix : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-			initialisePlaceholderArray();
-            winningPath = FindPath(startx, starty, endx, endy);
-            if (winningPath.Count > 0)
-            {
-                Debug.Log("we found the goal");
-                canUpdatePosition = !canUpdatePosition;
-            }
-			else
-			{
-				Debug.Log("no goal found");
-				Debug.Log(winningPath.Count);
-			}
-        }
-
         if (canUpdatePosition)
         {
             canUpdatePosition = false;
@@ -107,7 +91,20 @@ public class ConnectionMatrix : MonoBehaviour
 
     public void CheckButton()
     {
-       
+		initialisePlaceholderArray();
+
+		winningPath = FindPath(startx, starty, endx, endy);
+
+		if (winningPath.Count > 0)
+		{
+			Debug.Log("we found the goal");
+			canUpdatePosition = !canUpdatePosition;
+		}
+		else
+		{
+			Debug.Log("no goal found");
+			Debug.Log(winningPath.Count);
+		}
     }
 
     List<Vector2> FindPath(int startX, int startY, int endX, int endY)
@@ -533,6 +530,7 @@ public class ConnectionMatrix : MonoBehaviour
         float currentTime = 0;
         while (currentTime < totalTime)
         {
+			player.transform.LookAt(target);
             currentTime += Time.deltaTime;
             player.transform.position = Vector3.Lerp(v3, target, currentTime / totalTime);
 
