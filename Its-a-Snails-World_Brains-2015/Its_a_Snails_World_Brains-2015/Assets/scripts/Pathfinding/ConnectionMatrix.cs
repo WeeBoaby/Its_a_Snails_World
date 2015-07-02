@@ -82,19 +82,21 @@ public class ConnectionMatrix : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
+			initialisePlaceholderArray();
             winningPath = FindPath(startx, starty, endx, endy);
             if (winningPath.Count > 0)
             {
                 Debug.Log("we found the goal");
                 canUpdatePosition = !canUpdatePosition;
             }
+			else
+			{
+				Debug.Log("no goal found");
+				Debug.Log(winningPath.Count);
+			}
         }
-        else
-            Debug.Log("no goal found");
-
-        Debug.Log(winningPath.Count);
 
         if (canUpdatePosition)
         {
