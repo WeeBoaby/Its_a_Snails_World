@@ -42,6 +42,7 @@ public class CoordScript : MonoBehaviour {
 		{
 			currentTime += Time.deltaTime;
 			this.gameObject.transform.position = Vector3.Lerp(this.gameObject.transform.position, target, currentTime/totalTime);
+
 			yield return 0;
 			
 		}

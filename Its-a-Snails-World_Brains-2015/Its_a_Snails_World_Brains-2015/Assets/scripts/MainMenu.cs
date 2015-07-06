@@ -23,6 +23,18 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
 
+	public void StartGame()
+	{
+		Application.LoadLevel (2);
+	}
+
+	public void Menu()
+	{
+		Application.LoadLevel (0);
+	}
+
+
+
     
 
    // public void optionsButton()

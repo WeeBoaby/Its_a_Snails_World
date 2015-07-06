@@ -7,6 +7,7 @@ public class BlockPathfinding : MonoBehaviour
 	public static int[,] numbers = new int[7,7]; // row and col 0 and 6 are for the gates! (gate 0 means closed 1 means open) others are tileIDs
 	public Vector2 movingLily, targetCoord;
 	public int lilysHit = 0;
+	public ConnectionMatrix snailPathfinder;
 
 	// Use this for initialization
 	void Start () 
@@ -508,6 +509,7 @@ public class BlockPathfinding : MonoBehaviour
 		tempArray[1] = targetCoord;
 		
 		BroadcastMessage("MoveLilyPad", tempArray);
+		snailPathfinder.CheckButton ();
 		//PrintGrid();
 	}
 }
