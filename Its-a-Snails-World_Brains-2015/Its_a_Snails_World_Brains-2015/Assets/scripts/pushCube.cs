@@ -15,9 +15,9 @@ public class pushCube : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        Debug.Log(this.gameObject.transform.position);
+        //Debug.Log(this.gameObject.transform.position);
 
-        BlockRepresentation1.Blocks.Add(this.gameObject);
+        //BlockRepresentation1.Blocks.Add(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -50,7 +50,7 @@ public class pushCube : MonoBehaviour {
 
    public IEnumerator moveToCoroutine(Vector3 target)
    {
-       BlockRepresentation1.isInputAllowed = false;
+       //BlockRepresentation1.isInputAllowed = false;
 
        Vector3 startposition = transform.position;
 
@@ -63,7 +63,7 @@ public class pushCube : MonoBehaviour {
            transform.position = Vector3.Lerp(transform.position, target, currentTime/totalTime);
 
 
-           BlockRepresentation1.isInputAllowed = true;
+           //BlockRepresentation1.isInputAllowed = true;
            yield return 0;
            
        }

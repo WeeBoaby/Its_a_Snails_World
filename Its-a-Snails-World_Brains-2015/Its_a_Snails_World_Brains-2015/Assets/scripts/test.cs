@@ -10,10 +10,16 @@ public class test : MonoBehaviour {
 	void Start () 
     {
         if (Application.loadedLevel == 1)
-        BlockRepresentation1.initialisation2();
+		{
+			//Debug.Log ("initialisation2");
+        	//BlockRepresentation1.initialisation2();
+		}
 
         if (Application.loadedLevel == 2)
-            BlockRepresentation1.initialisation1();
+		{
+			//Debug.Log ("initialisation1");
+            //BlockRepresentation1.initialisation1();
+		}
 
 	}
 	
@@ -21,7 +27,7 @@ public class test : MonoBehaviour {
 	void Update () {
 
         //Debug.Log("dedede");
-        tryRERE();
+        //tryRERE();
 	}
 
     void tryRERE ()
@@ -29,7 +35,7 @@ public class test : MonoBehaviour {
     {
         if (t)
         {
-            BlockRepresentation1.displayGrid();
+            //BlockRepresentation1.displayGrid();
             t = false;
             
            
@@ -43,7 +49,7 @@ public class test : MonoBehaviour {
           //  BlockRepresentation1.openAGateVert(4, 0);
            // BlockRepresentation1.openAGateVert(0, 1);
 
-            BlockRepresentation1.displayGrid();
+            //BlockRepresentation1.displayGrid();
             
         }
     }

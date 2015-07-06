@@ -22,43 +22,43 @@ public class ConnectionMatrix : MonoBehaviour
 	
     void initialisePlaceholderArray()
     {
-        zoltansArray = BlockRepresentation1.numbers;
+        zoltansArray = BlockPathfinding.numbers;
 
         // row - column
-        placeholderArray[1, 1] = getValueFromArray(5, 1);
-        placeholderArray[1, 2] = getValueFromArray(4, 1);
-        placeholderArray[1, 3] = getValueFromArray(3, 1);
-        placeholderArray[1, 4] = getValueFromArray(2, 1);
-        placeholderArray[1, 5] = getValueFromArray(1, 1);
+        placeholderArray[1, 1] = getValueFromArray(1, 1);
+        placeholderArray[1, 2] = getValueFromArray(1, 2);
+        placeholderArray[1, 3] = getValueFromArray(1, 3);
+        placeholderArray[1, 4] = getValueFromArray(1, 4);
+        placeholderArray[1, 5] = getValueFromArray(1, 5);
 
         // row - column
-        placeholderArray[2, 1] = getValueFromArray(5, 2);
-        placeholderArray[2, 2] = getValueFromArray(4, 2);
-        placeholderArray[2, 3] = getValueFromArray(3, 2);
-        placeholderArray[2, 4] = getValueFromArray(2, 2);
-        placeholderArray[2, 5] = getValueFromArray(1, 2);
+        placeholderArray[2, 1] = getValueFromArray(2, 1);
+        placeholderArray[2, 2] = getValueFromArray(2, 2);
+        placeholderArray[2, 3] = getValueFromArray(2, 3);
+        placeholderArray[2, 4] = getValueFromArray(2, 4);
+        placeholderArray[2, 5] = getValueFromArray(2, 5);
 
         // row - column
-        placeholderArray[3, 1] = getValueFromArray(5, 3);
-        placeholderArray[3, 2] = getValueFromArray(4, 3);
+        placeholderArray[3, 1] = getValueFromArray(3, 1);
+        placeholderArray[3, 2] = getValueFromArray(3, 2);
         placeholderArray[3, 3] = getValueFromArray(3, 3);
-        placeholderArray[3, 4] = getValueFromArray(2, 3);
-        placeholderArray[3, 5] = getValueFromArray(1, 3);
+        placeholderArray[3, 4] = getValueFromArray(3, 4);
+        placeholderArray[3, 5] = getValueFromArray(3, 5);
 
 
         // row - column
-        placeholderArray[4, 1] = getValueFromArray(5, 4);
-        placeholderArray[4, 2] = getValueFromArray(4, 4);
-        placeholderArray[4, 3] = getValueFromArray(3, 4);
-        placeholderArray[4, 4] = getValueFromArray(2, 4);
-        placeholderArray[4, 5] = getValueFromArray(1, 4);
+        placeholderArray[4, 1] = getValueFromArray(4, 1);
+        placeholderArray[4, 2] = getValueFromArray(4, 2);
+        placeholderArray[4, 3] = getValueFromArray(4, 3);
+        placeholderArray[4, 4] = getValueFromArray(4, 4);
+        placeholderArray[4, 5] = getValueFromArray(4, 5);
 
         // row - column
-        placeholderArray[5, 1] = getValueFromArray(5, 5);
-        placeholderArray[5, 2] = getValueFromArray(4, 5);
-        placeholderArray[5, 3] = getValueFromArray(3, 5);
-        placeholderArray[5, 4] = getValueFromArray(2, 5);
-        placeholderArray[5, 5] = getValueFromArray(1, 5);
+        placeholderArray[5, 1] = getValueFromArray(5, 1);
+        placeholderArray[5, 2] = getValueFromArray(5, 2);
+        placeholderArray[5, 3] = getValueFromArray(5, 3);
+        placeholderArray[5, 4] = getValueFromArray(5, 4);
+        placeholderArray[5, 5] = getValueFromArray(5, 5);
 
         Debug.Log(placeholderArray[1, 5] + "" + placeholderArray[2, 5] + "" + placeholderArray[3, 5] + "" + placeholderArray[4, 5]+""+ placeholderArray[5, 5]);
         Debug.Log(placeholderArray[1, 4] + "" + placeholderArray[2, 4] + "" + placeholderArray[3, 4] + "" + placeholderArray[4, 4] + "" + placeholderArray[5, 4]);
@@ -71,7 +71,7 @@ public class ConnectionMatrix : MonoBehaviour
     {
         int val = 999;
         val = zoltansArray[x1, y1];
-        Debug.Log("val of" + x1 + " " + y1 + val );
+        //Debug.Log("val of" + x1 + " " + y1 + val );
 
         if (val > 0)
             return 1;
@@ -374,8 +374,6 @@ public class ConnectionMatrix : MonoBehaviour
 
     void FollowPath(List<Vector2> listIn)
     {
-        //this method is going to assign each 2d array location to a waypoint position
-        //it will then make the snail go through the final list one by one till it gets to the goal
         Debug.Log("started to follow path");
 
         foreach(Vector2 vec in listIn)
